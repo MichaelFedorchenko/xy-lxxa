@@ -1,4 +1,4 @@
-<h3 align="center">Python-Class for control Charge Controllers</h3>
+<h3 align="center">Library for managing Charge Controllers</h3>
 <h4 align="center">XY-L10A or XY-L30A</h3>
 
 <br />
@@ -9,6 +9,13 @@
 </div>
 
 ### Controllers XY-L10A and XY-L30A working via UART
+For connecting to controller you should set file and baudrate of port
+
+Baudrate in datasheet is 115200
+
+Actual baudrate is 9600
+                
+<br />
 
 ### Basic Usage
 <br />
@@ -18,7 +25,7 @@ Class init
 import xy_lxxa as CTRL
 ups = CTRL.XYCTRL(port='/dev/ttyUSB0', baudrate=9600, timeout=0.1)
 ```
-timeout in 0.1s use after send command to controller
+timeout=0.1 is used after sending command to controller
 
 <br />
 
@@ -102,7 +109,7 @@ except Exception as e:
 ```
 <br />
 
-Start stream ang subscribe on it
+Start data-stream and subscribe to it
 ```py
 streamWorks = False
 try:
